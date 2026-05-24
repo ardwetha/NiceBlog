@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Article</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg: #09090e;
+                --accent: #c8a84b;
+                --text: #e8e3d8;
+                --muted: #54505f;
+                --border: #181826;
+                --code-bg: #0e0e1a;
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                background: var(--bg);
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background: var(--bg);
+                color: var(--text);
+                font-family: "Lora", Georgia, serif;
+                font-size: 17px;
+                line-height: 1.85;
+                padding: 56px 64px 80px;
+                max-width: 740px;
+                margin: 0 auto;
+                -webkit-font-smoothing: antialiased;
+                animation: fadeIn 0.35s ease;
+            }
+
+            /* ── Headings ─────────────────────── */
+            h1 {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 44px;
+                font-weight: 700;
+                line-height: 1.12;
+                letter-spacing: -0.01em;
+                color: var(--text);
+                margin-bottom: 32px;
+                padding-bottom: 28px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            h2 {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 30px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 52px 0 18px;
+                line-height: 1.2;
+            }
+
+            h3 {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 36px 0 12px;
+            }
+
+            h4,
+            h5,
+            h6 {
+                font-family: "JetBrains Mono", monospace;
+                font-size: 12px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin: 28px 0 10px;
+            }
+
+            /* ── Body text ────────────────────── */
+            p {
+                margin-bottom: 22px;
+            }
+
+            a {
+                color: var(--accent);
+                text-decoration: underline;
+                text-decoration-color: rgba(200, 168, 75, 0.4);
+                text-underline-offset: 3px;
+                transition: text-decoration-color 0.15s;
+            }
+
+            a:hover {
+                text-decoration-color: var(--accent);
+            }
+
+            strong {
+                font-weight: 600;
+                color: var(--text);
+            }
+
+            em {
+                font-style: italic;
+                color: #ccc6b8;
+            }
+
+            /* ── Blockquote ───────────────────── */
+            blockquote {
+                margin: 32px 0;
+                padding: 6px 0 6px 22px;
+                border-left: 2px solid var(--accent);
+                font-style: italic;
+                color: #9a9098;
+                font-size: 18px;
+                line-height: 1.7;
+            }
+
+            blockquote p {
+                margin-bottom: 0;
+                color: inherit;
+            }
+
+            /* ── Code ─────────────────────────── */
+            code {
+                font-family: "JetBrains Mono", monospace;
+                font-size: 13px;
+                background: var(--code-bg);
+                padding: 2px 7px;
+                border-radius: 4px;
+                color: #d4b896;
+                border: 1px solid var(--border);
+            }
+
+            pre {
+                background: var(--code-bg);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                padding: 22px 26px;
+                overflow-x: auto;
+                margin: 28px 0;
+            }
+
+            pre code {
+                background: none;
+                border: none;
+                padding: 0;
+                font-size: 13px;
+                line-height: 1.75;
+                color: #c8c0b4;
+            }
+
+            /* ── Lists ────────────────────────── */
+            ul,
+            ol {
+                padding-left: 26px;
+                margin-bottom: 22px;
+            }
+
+            li {
+                margin-bottom: 7px;
+            }
+
+            li::marker {
+                color: var(--accent);
+            }
+
+            /* ── HR ───────────────────────────── */
+            hr {
+                border: none;
+                border-top: 1px solid var(--border);
+                margin: 48px 0;
+            }
+
+            /* ── Table ────────────────────────── */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 28px 0;
+                font-size: 15px;
+            }
+
+            th {
+                font-family: "JetBrains Mono", monospace;
+                font-size: 10px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--muted);
+                border-bottom: 1px solid var(--border);
+                padding: 9px 14px;
+                text-align: left;
+            }
+
+            td {
+                padding: 11px 14px;
+                border-bottom: 1px solid var(--border);
+                vertical-align: top;
+            }
+
+            /* ── Images ───────────────────────── */
+            img {
+                max-width: 100%;
+                border-radius: 5px;
+                margin: 28px 0;
+                display: block;
+            }
+
+            /* ── Animation ────────────────────── */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(8px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        {{content}}
+    </body>
+</html>
